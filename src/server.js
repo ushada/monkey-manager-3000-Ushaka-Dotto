@@ -190,7 +190,7 @@ models.sequelize.sync(/*{ force: true }*/).then(function () {
    */
 
 
-    app.listen(3000, function () {
+    app.listen(process.env.PORT, function () {
     console.log('Express server listening on port 3000');
   });
 });
