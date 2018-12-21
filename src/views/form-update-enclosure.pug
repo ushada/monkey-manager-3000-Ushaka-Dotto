@@ -1,0 +1,12 @@
+extends layout.pug
+block content
+ form(action='/update-enclosure/'+Id method='POST')
+    label(for='name') Name
+     input.form-control(type='text' name='name')
+    label(for='description') Description
+     input.form-control(type='text' name='description')
+    label(for='surface') Surface
+     input.form-control(type='number' name='surface'  min="1" max="999")
+    p
+    button(type="submit") Submit
+ p #{message}

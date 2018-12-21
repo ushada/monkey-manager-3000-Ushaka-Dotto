@@ -1,0 +1,14 @@
+extends layout.pug
+block content
+ p Nom : #{monkey.name}
+ p Taille : #{monkey.height} CM
+ p Poids : #{monkey.weight} KG
+ p Espèce : #{monkey.species}
+ p Enclos : #{enclosure.name}
+ form(action='/delete-monkey/'+monkey.id  method='POST')
+  button(type="submit") Delete
+ a(href='/update-monkey/'+monkey.id)
+  button(type="submit") Update
+ p
+ a(href='/display-enclosures')
+    button(type="button") Return to enclosures

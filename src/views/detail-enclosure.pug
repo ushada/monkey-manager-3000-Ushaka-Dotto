@@ -1,0 +1,18 @@
+extends layout.pug
+block content
+ p Nom : #{enclosure.name}
+ p Description : #{enclosure.description}
+ p Surface : #{enclosure.surface}
+ p Singe(s) :
+  ul
+   each element in monkeys
+    a(href='/detail-monkey/'+element.id)
+     li= element.name
+ form(action='/delete-enclosure/'+enclosure.id  method='POST')
+  button(type="submit") Delete
+ p Deleting the enclosure involves delete monkeys.
+ a(href='/update-enclosure/'+enclosure.id)
+  button(type="submit") Update
+ p
+ a(href='/display-enclosures')
+    button(type="button") Return to enclosures

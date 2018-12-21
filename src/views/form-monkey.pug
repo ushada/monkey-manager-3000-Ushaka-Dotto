@@ -1,0 +1,25 @@
+extends layout.pug
+block content
+ if active
+   p Message : #{message}
+   a(href='/display-enclosures')
+    button(type="button") Return to enclosures
+ else
+   form(action='/form-monkey' method='POST')
+    label(for='name') Name
+     input.form-control(type='text' name='name')
+    label(for='species') Species
+     input.form-control(type='text' name='species')
+    label(for='height') Height (CM)
+     input.form-control(type='number' name='height' min='1' max='999')
+    label(for='weight') Weight (KG)
+     input.form-control(type='number' name='weight' min="1" max="999")
+    p
+    label(for='enclosure') Enclosures :
+     each val in enclosures
+      p
+      input.form-control(type='radio' name='enclosure' value=val.id)
+      span= val.name
+    p
+    button(type="submit") Submit
+    p #{message}

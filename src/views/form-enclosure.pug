@@ -1,0 +1,17 @@
+extends layout.pug
+block content
+ if active
+  p #{message}
+  a(href='/display-enclosures')
+   button(type="button") Back
+ else
+  form(action='/form-enclosure' method='POST')
+    label(for='name') Name
+     input.form-control(type='text' name='name')
+    label(for='name') Description
+     input.form-control(type='text' name='description')
+    label(for='height') Surface
+     input.form-control(type='number' name='surface'  min="1" max="999")
+    p
+    button(type="submit") Submit
+  p #{message}
