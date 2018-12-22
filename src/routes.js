@@ -87,8 +87,8 @@ exports.submitEnclosureHandler = (req, res) => {
         })
         .catch((err) => {
             res.render('form-enclosure', {
-                message: err,
-                active:false
+                message: 'Missing information(s).',
+                active:true
             })
         })
 
