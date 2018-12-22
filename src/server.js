@@ -65,12 +65,25 @@ app.post('/update-enclosure/:id', Routes.updateEnclosureHandler)// Update un enc
 
 
 //GET ALL MONKEYS
-app.get('/monkey', function (req, res) {
+app.get('/apirest/monkeys', function (req, res) {
     models.Monkey.findAll({
         where: req.query
     })
-        .then((monkey) => {
-            res.json(monkey)
+        .then((monkeys) => {
+            res.json(monkeys)
+        })
+        .catch((err) => {
+            res.json(err)
+        })
+})
+
+//GET ALL ENCLOSUREs
+app.get('/apirest/enclosures', function (req, res) {
+    models.Enclosure.findAll({
+        where: req.query
+    })
+        .then((enclosures) => {
+            res.json(enclosures)
         })
         .catch((err) => {
             res.json(err)
@@ -78,7 +91,7 @@ app.get('/monkey', function (req, res) {
 })
 
 //CREATE A MONKEY
-app.post('/monkey', function (req, res) {
+app.post('/apirest/monkey', function (req, res) {
     models.Monkey.create({
         name: req.body.name,
         height: req.body.height,
@@ -92,8 +105,23 @@ app.post('/monkey', function (req, res) {
         })
 })
 
+//CREATE AN ENCLOSSURE
+app.post('/apirest/enclosure', function (req, res) {
+    models.Monkey.create({
+        name: req.body.name,
+        description: req.body.description,
+        surface: req.body.surface
+    })
+        .then((monkey) => {
+            res.json(monkey);
+        })
+        .catch((err) => {
+            res.json(err)
+        })
+})
+
 //UPDATE MONKEY
-app.put('/monkey', function (req, res) {
+app.put('/apirest/monkey', function (req, res) {
     const promises = [];
 
     req.body.mutations
@@ -121,8 +149,37 @@ app.put('/monkey', function (req, res) {
         })
 })
 
+//UPDATE ENCLOSURE
+app.put('/apirest/enclosure', function (req, res) {
+    const promises = [];
+
+    req.body.mutations
+        .forEach((item) => {
+
+            promises.push(
+                models.Enclosure.update(
+                    item.data,
+                    {
+                        where: {
+                            id: item.id
+                        }
+                    }
+                )
+            )
+
+        })
+
+    Promise.all(promises)
+        .then((response) => {
+            res.json(response);
+        })
+        .catch((err) => {
+            res.json(err)
+        })
+})
+
 //DELETE MONKEY
-app.delete('/monkey', function (req, res) {
+app.delete('/apirest/monkey', function (req, res) {
     models.Monkey.destroy({
         where: {
             id: req.body.ids
@@ -136,8 +193,23 @@ app.delete('/monkey', function (req, res) {
         })
 })
 
+//DELETE ENCLOSURE
+app.delete('/apirest/enclosure', function (req, res) {
+    models.Enclosure.destroy({
+        where: {
+            id: req.body.id
+        }
+    })
+        .then((response) => {
+            res.json(response)
+        })
+        .catch((err) => {
+            res.json(err)
+        })
+})
+
 //GET MONKEY BY ID
-app.get('/monkey/:id', function (req, res) {
+app.get('/apirest/monkey/:id', function (req, res) {
     models.Monkey.findOne({
         id: req.params.id
     })
@@ -149,8 +221,21 @@ app.get('/monkey/:id', function (req, res) {
         })
 })
 
+//GET ENCLOSURE BY ID
+app.get('/apirest/enclosure/:id', function (req, res) {
+    models.Enclosure.findOne({
+        id: req.params.id
+    })
+        .then((enclosure) => {
+            res.json(enclosure)
+        })
+        .catch((err) => {
+            res.json(err)
+        })
+})
+
 //UPDATE MONKEY BY ID
-app.put('/monkey/:id', function (req, res) {
+app.put('/apirest/monkey/:id', function (req, res) {
     models.Monkey.update(
         req.body,
         {
@@ -158,8 +243,25 @@ app.put('/monkey/:id', function (req, res) {
                 id: req.params.id
             }
         })
-        .then((gremelin) => {
-            res.json(gremelin)
+        .then((monkey) => {
+            res.json(monkey)
+        })
+        .catch((err) => {
+            res.json(err)
+        })
+})
+
+//UPDATE ENCLOSURE BY ID
+app.put('/apirest/enclosure/:id', function (req, res) {
+    models.Enclosure.update(
+        req.body,
+        {
+            where: {
+                id: req.params.id
+            }
+        })
+        .then((enclosure) => {
+            res.json(enclosure)
         })
         .catch((err) => {
             res.json(err)
@@ -167,8 +269,23 @@ app.put('/monkey/:id', function (req, res) {
 })
 
 //DELETE MONKEY BY ID
-app.delete('/monkey/:id', function (req, res) {
+app.delete('/apirest/monkey/:id', function (req, res) {
     models.Monkey.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+        .then((response) => {
+            res.json(response);
+        })
+        .catch((err) => {
+            res.json(err)
+        })
+})
+
+//DELETE ENCLOSURE BY ID
+app.delete('/apirest/enclosure/:id', function (req, res) {
+    models.Enclosure.destroy({
         where: {
             id: req.params.id
         }

@@ -8,9 +8,11 @@ block content
   form(action='/form-enclosure' method='POST')
     label(for='name') Name
      input.form-control(type='text' name='name')
+	p
     label(for='name') Description
      input.form-control(type='text' name='description')
-    label(for='height') Surface
+	p
+    label(for='height') Surface (M²)
      input.form-control(type='number' name='surface'  min="1" max="999")
     p
     button(type="submit") Submit
