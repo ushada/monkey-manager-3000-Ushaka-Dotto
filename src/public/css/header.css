@@ -1,0 +1,26 @@
+﻿html {
+    background-image: url("../images/Background.jpg");
+    background-size: cover;
+}
+
+#icone {
+    position: absolute;
+    right: 15px;
+    z-index: 2;
+}
+
+#icone2 {
+    position: absolute;
+    left: 15px;
+    z-index: 2;
+}
+
+#entete {
+    color: white;
+    background-color: black;
+    text-align: center;
+    text-shadow: 3px 3px 3px grey;
+    font-size: 150%;
+    font-variant: small-caps;
+    z-index: 1;
+}

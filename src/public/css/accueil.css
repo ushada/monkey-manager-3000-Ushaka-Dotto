@@ -1,0 +1,60 @@
+html {
+    background-image: url("../images/Background.jpg");
+    background-size: cover;
+}
+
+#icone {
+    position: absolute;
+    right: 15px;
+    z-index: 2;
+}
+
+#icone2 {
+    position: absolute;
+    left: 15px;
+    z-index: 2;
+}
+
+#entete {
+
+    color: white;
+    background-color: black;
+    text-align: center;
+    text-shadow: 3px 3px 3px grey;
+    font-size: 150%;
+    font-variant: small-caps;  
+    z-index: 1;
+}
+
+#txtaccueil {
+    margin-left: 10vw;
+    text-align: left;
+    color: black;
+    font-size: 130%;
+    font-weight: bold;
+}
+#txtaccueil2 {
+    margin-left: 50px;
+    margin-right: 5%;
+    text-align: left;
+    color: black;
+    font-size: 90%;
+    font-weight: normal;
+}
+
+#buttonaccueil{
+    width: 450px;
+    margin-left: 45%;
+}
+
+#txtbutton{
+    text-align: center;
+    color: black;
+    font-size: 130%;
+    font-weight: bold;
+}
+
+#imageacceuil{
+    width: 450px;
+    margin-left: 33%;
+}

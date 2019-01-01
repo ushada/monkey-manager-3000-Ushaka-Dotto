@@ -29,6 +29,9 @@ app.use(bodyParser.json())
 // Add a bit of logging
 app.use(morgan('short'))
 
+//Servir des fichiers statiques dans Express
+app.use(express.static(__dirname + '/public'));
+
 //*************************************************\\
 //                                                 \\
 //               EXPRESS, PUG                      \\
@@ -38,21 +41,21 @@ app.use(morgan('short'))
 
 app.get('/',Routes.indexHandler)
 
-app.get('/form-monkey', Routes.formMonkeyHandler) // Récupère un formulaire pour l'ajout d'un singe
-app.post('/form-monkey', Routes.submitMonkeyHandler) // Submit un formulaire d'ajout de singe
-app.get('/detail-monkey/:id', Routes.diplayDetailMonkeyHandler) // Récupère le détail d'un singe
+app.get('/form-monkey', Routes.formMonkeyHandler) // Formulaire pour l'ajout d'un singe
+app.post('/form-monkey', Routes.submitMonkeyHandler) // Valide le formulaire d'ajout de singe
+app.get('/detail-monkey/:id', Routes.diplayDetailMonkeyHandler) // Détail d'un singe
 app.post('/delete-monkey/:id', Routes.deleteMonkeyHandler) //Supprime un singe
-app.get('/update-monkey/:id', Routes.formUpdateMonkeyHandler) //Récupère un formulaire pour update un singe
-app.post('/update-monkey/:id', Routes.updateMonkeyHandler) // Update un singe
+app.get('/update-monkey/:id', Routes.formUpdateMonkeyHandler) //Formulaire pour la maj un singe
+app.post('/update-monkey/:id', Routes.updateMonkeyHandler) // Maj un singe
 
 
-app.get('/display-enclosures', Routes.diplayEnclosureHandler) //Récupère tous les enclos
-app.get('/detail-enclosure/:id', Routes.diplayDetailEnclosureHandler)//Récupère le détail d'un enclos
-app.get('/form-enclosure', Routes.formEnclosureHandler)//  Récupère un formulaire pour ajouter un enclos
-app.post('/form-enclosure', Routes.submitEnclosureHandler)//Submit un formulaire d'ajout de d'enclos
+app.get('/display-enclosures', Routes.diplayEnclosureHandler) //Affiche tous les enclos
+app.get('/detail-enclosure/:id', Routes.diplayDetailEnclosureHandler)//Détail d'un enclos
+app.get('/form-enclosure', Routes.formEnclosureHandler)//  Formulaire pour l'ajout un enclos
+app.post('/form-enclosure', Routes.submitEnclosureHandler)//Valide le formulaire d'ajout de d'enclos
 app.post('/delete-enclosure/:id', Routes.deleteEnclosureHandler)//Supprime un enclos
-app.get('/update-enclosure/:id', Routes.formUpdateEnclosureHandler)//Récupère un formulaire pour update un enclos
-app.post('/update-enclosure/:id', Routes.updateEnclosureHandler)// Update un enclos
+app.get('/update-enclosure/:id', Routes.formUpdateEnclosureHandler)//Formulaire pour update un enclos
+app.post('/update-enclosure/:id', Routes.updateEnclosureHandler)// Maj un enclos
 
 
 

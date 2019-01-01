@@ -1,0 +1,108 @@
+﻿
+#txtaccueil {
+    margin-left: 10vw;
+    text-align: left;
+    color: black;
+    font-size: 130%;
+    font-weight: bold;
+}
+
+#txtaccueil2 {
+    margin-left: 50px;
+    margin-right: 5%;
+    text-align: left;
+    color: black;
+    font-size: 90%;
+    font-weight: normal;
+}
+
+#buttonaccueil {
+    width: 450px;
+    margin-left: 45%;
+}
+
+#txtbutton {
+    text-align: center;
+    color: black;
+    font-size: 130%;
+    font-weight: bold;
+}
+
+#imageacceuil {
+    width: 450px;
+    margin-left: 33%;
+}
+
+#border {
+    border: 1px solid black;
+    background-color: lightcyan;
+    margin-left: 15%;
+    margin-right: 15%;
+    box-shadow: 3px 3px 3px grey;
+}
+
+#txtenclos {
+    text-align: left;
+    margin-left: 2vw;
+    color: black;
+    font-size: 130%;
+    font-weight: bold;
+}
+
+#txtenclos2 {
+    margin-left: 50px;
+    text-align: left;
+    color: black;
+    font-size: 100%;
+    font-weight: normal;
+}
+
+#button1 {
+    float: left;
+    margin-left: 30vw;
+}
+
+#button2 {
+    float: right;
+    margin-right: 30vw;
+}
+
+#txtbutton {
+    text-align: center;
+    color: black;
+    font-size: 130%;
+    font-weight: bold;
+}
+
+#buttonsuppr {
+    float: right;
+    margin-right: 5px;
+    margin-top: -7px;
+}
+
+#txtsuppr {
+    font-size: 70%;
+}
+
+#txtsinge {
+    text-align: left;
+    margin-left: 2vw;
+    color: black;
+    font-size: 130%;
+    font-weight: bold;
+}
+
+#imagesinge {
+    float: right;
+    margin-right: 50px;
+}
+
+#txtsinge2 {
+    margin-left: 50px;
+    text-align: left;
+    color: black;
+    font-size: 100%;
+    font-weight: normal;
+}
+
+

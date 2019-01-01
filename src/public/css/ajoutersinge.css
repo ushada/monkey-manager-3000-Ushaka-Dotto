@@ -1,0 +1,65 @@
+html {
+    background-image: url("image/Background.jpg");
+    background-size: cover;
+}
+
+#icone {
+    position: absolute;
+    right: 15px;
+    z-index: 2;
+}
+
+#icone2 {
+    position: absolute;
+    left: 15px;
+    z-index: 2;
+}
+
+#entete {
+    color: white;
+    background-color: black;
+    text-align: center;
+    text-shadow: 3px 3px 3px grey;
+    font-size: 150%;
+    font-variant: small-caps;  
+}
+
+#border {
+    margin-left: 15vw;
+    border:1px solid blue;
+    background-color: whitesmoke;
+    width: 500px;
+    box-shadow: 3px 3px 3px grey;
+ }
+ 
+ #txtsinge {
+    text-align: center;
+    color: black;
+    font-size: 250%;
+    font-weight: bold;
+}
+ 
+ #imagesinge {
+    margin-left: 175px
+ }
+
+ #infos {
+    margin-top: 20px;
+    text-align: right;
+    margin-right: 150px;
+    
+ }
+
+ #txtenclos{
+    margin-right: 177px
+ }
+
+ #checkboxx{
+    text-align: left;
+    margin-left: 140px;
+ }
+
+ #buttonajouter {
+    margin-left: 190px;
+    margin-top: 50px;
+    }
