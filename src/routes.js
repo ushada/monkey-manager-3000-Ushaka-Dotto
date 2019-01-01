@@ -191,14 +191,12 @@ exports.updateEnclosureHandler = (req, res) => {
                         })
                         .catch((err) => {
                             res.render('', {
-                                monkeys: Monkeys,
                                 message: err
                             })
                         })
                 })
                 .catch((err) => {
                     res.render('', {
-                        monkeys: Monkeys,
                         message: err
                     })
                 })
@@ -208,7 +206,6 @@ exports.updateEnclosureHandler = (req, res) => {
         })
         .catch((err) => {
             res.render('', {
-                monkeys: Monkeys,
                 message: err
             })
         })
@@ -235,7 +232,7 @@ exports.formMonkeyHandler = (req, res) => {
             })
         })
         .catch((err) => {
-            res.render('/', {
+            res.render('', {
                 message: err
             })
         })
@@ -273,17 +270,17 @@ exports.submitMonkeyHandler = (req, res) => {
                                     active: false
                                 })
                             })
-                            .catch((Err) => {
-                                res.render('/', {
+                            .catch((err) => {
+                                res.render('', {
                                     message: Err
                                 })
                             })
                     })
             
         })
-        .catch((Err) => {
-            res.render('/', {
-                message: Err
+        .catch((err) => {
+            res.render('', {
+                message: err
             })
         })
 
@@ -362,7 +359,6 @@ exports.deleteMonkeyHandler = (req, res) => {
         })
         .catch((err) => {
             res.render('', {
-                monkeys: Monkeys,
                 message: err
             })
         })
@@ -413,18 +409,15 @@ exports.updateMonkeyHandler = (req, res) => {
                         })
                         .catch((err) => {
                             res.render('', {
-                                monkeys: Monkeys,
                                 message: err
                             })
                         })
                 })
-            var HaveEnclosure = false;
             
 
         })
         .catch((err) => {
             res.render('', {
-                monkeys: Monkeys,
                 message: err
             })
         })
