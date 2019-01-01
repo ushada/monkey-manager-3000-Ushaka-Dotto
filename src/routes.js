@@ -240,7 +240,6 @@ exports.submitMonkeyHandler = (req, res) => {
 
     models.Enclosure.findOne({ where: { id: req.body.enclosure } })
         .then(enclosure => {
-            if (req.body.name != undefined && req.body.species != undefined && req.body.height != undefined && req.body.weight != undefined) {
                 models.Monkey.create({
                     name: req.body.name,
                     species: req.body.species,
@@ -277,13 +276,7 @@ exports.submitMonkeyHandler = (req, res) => {
                                 })
                             })
                     })
-            }
-            else {
-                res.render('form-monkey', {
-                    message: 'Missing information(s).',
-                    active: true
-                })
-            }
+            
         })
         .catch((Err) => {
             res.render('/', {
