@@ -196,6 +196,12 @@ exports.updateEnclosureHandler = (req, res) => {
                             })
                         })
                 })
+                .catch((err) => {
+                    res.render('', {
+                        monkeys: Monkeys,
+                        message: err
+                    })
+                })
             var HaveEnclosure = false;
 
 
