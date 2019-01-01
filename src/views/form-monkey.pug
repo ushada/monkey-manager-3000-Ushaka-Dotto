@@ -8,39 +8,38 @@ block content
   #border
    form(action='/form-monkey' method='POST')
     br
-   dir#infos
-    | Nom : 
-    input.form-control(type='text' name='name')
-    br
-    br
-    br
-    br
-    |                 Taille (CM) : 
-    input.form-control(type='number' name='height' min='1' max='999')
-    br
-    br
-    br
-    br
-    |                 Poid (KG) : 
-    input.form-control(type='number' name='weight' min="1" max="999")
-    br
-    br
-    br
-    br
-    |                 Espèce : 
-    input.form-control(type='text' name='species')
-    br
-    br
-    br
-    br
-    #txtenclos Choisir un enclos :
-    #checkboxx
-     each val in enclosures
-      p
-      input.form-control(type='radio' name='enclosure' value=val.id)
-      span= val.name
-   dir#buttonajouter
-    form(action='/form-monkey' method='POST')
+    dir#infos
+     | Nom : 
+     input.form-control(type='text' name='name')
+     br
+     br
+     br
+     br
+     |                 Taille (CM) : 
+     input.form-control(type='number' name='height' min='1' max='999')
+     br
+     br
+     br
+     br
+     |                 Poid (KG) : 
+     input.form-control(type='number' name='weight' min="1" max="999")
+     br
+     br
+     br
+     br
+     |                 Espèce : 
+     input.form-control(type='text' name='species')
+     br
+     br
+     br
+     br
+     #txtenclos Choisir un enclos :
+     #checkboxx
+      each val in enclosures
+       p
+       input.form-control(type='radio' name='enclosure' value=val.id)
+       span= val.name
+    dir#buttonajouter
      button(type='submit' ) Valider
    p
    #buttonsuppr

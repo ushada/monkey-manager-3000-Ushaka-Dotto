@@ -248,10 +248,7 @@ exports.submitMonkeyHandler = (req, res) => {
 
                 })
                     .then((monkey) => {
-                        models.Enclosure.findOne({ where: { id: req.body.enclosure } })
-                            .then((enclosure) => {
-                                enclosure.addMonkeys(monkey)
-                            })
+                        enclosure.addMonkeys(monkey)
                         res.render('form-monkey', {
                             message: 'Creating ' + req.body.name + ' done!',
                             active: true
