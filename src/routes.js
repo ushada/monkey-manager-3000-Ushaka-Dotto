@@ -87,7 +87,7 @@ exports.submitEnclosureHandler = (req, res) => {
         })
         .catch((err) => {
             res.render('form-enclosure', {
-                message: 'Missing information(s).',
+                message: 'DataBaseError: Missing datas.Please recomplete the form.',
                 active:true
             })
         })
@@ -197,10 +197,9 @@ exports.updateEnclosureHandler = (req, res) => {
                 })
                 .catch((err) => {
                     res.render('', {
-                        message: err
+                        message: 'DataBaseError: Missing datas.Please recomplete the form.'
                     })
                 })
-            var HaveEnclosure = false;
 
 
         })
@@ -260,21 +259,10 @@ exports.submitMonkeyHandler = (req, res) => {
 
                     })
                     .catch((err) => {
-                        models.Enclosure.findAll({
-                            where: req.query
+                        res.render('form-monkey', {
+                            message: 'DataBaseError: Missing datas.Please recomplete the form.',
+                            active: true
                         })
-                            .then((Enclosures) => {
-                                res.render('form-monkey', {
-                                    enclosures: Enclosures,
-                                    message: err,
-                                    active: false
-                                })
-                            })
-                            .catch((err) => {
-                                res.render('', {
-                                    message: Err
-                                })
-                            })
                     })
             
         })
@@ -413,6 +401,11 @@ exports.updateMonkeyHandler = (req, res) => {
                             })
                         })
                 })
+                .catch((err) => {
+                    res.render('', {
+                        message: 'DataBaseError: Missing datas. Please complete the form.'
+                    })
+                })
             
 
         })
@@ -441,7 +434,7 @@ exports.formUpdateEnclosureHandler = (req, res) => {
             })
         })
         .catch((err) => {
-            res.render('/', {
+            res.render('', {
                 message: err
             })
         })
@@ -462,7 +455,7 @@ exports.formUpdateMonkeyHandler = (req, res) => {
             })
         })
         .catch((err) => {
-            res.render('/', {
+            res.render('', {
                 message: err
             })
         })
