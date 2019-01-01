@@ -5,7 +5,7 @@ exports.indexHandler = (req,res) => {
     res.render('index')
 }
 
-//********** HANDLER ECNLOSURE ***********\\
+//********** HANDLERS ECNLOSURES ***********\\
 
 //Affichage enclos
 exports.diplayEnclosureHandler = (req, res) => {
@@ -214,7 +214,7 @@ exports.updateEnclosureHandler = (req, res) => {
 
 
 
-//********** HANDLER MONKEY ***********\\
+//********** HANDLERS MONKEYS ***********\\
 
 //Ajout d'un singe
 exports.formMonkeyHandler = (req, res) => {
@@ -240,7 +240,7 @@ exports.submitMonkeyHandler = (req, res) => {
 
     models.Enclosure.findOne({ where: { id: req.body.enclosure } })
         .then(enclosure => {
-            if (enclosure && req.body.name && req.body.species && req.body.height && req.body.weight) {
+            if (req.body.name != undefined && req.body.species != undefined && req.body.height != undefined && req.body.weight != undefined) {
                 models.Monkey.create({
                     name: req.body.name,
                     species: req.body.species,
