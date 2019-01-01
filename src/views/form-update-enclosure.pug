@@ -1,14 +1,38 @@
 extends layout.pug
 block content
- form(action='/update-enclosure/'+Id method='POST')
-    label(for='name') Name
-     input.form-control(type='text' name='name')
-    p
-    label(for='description') Description
-     input.form-control(type='text' name='description')
-    p
-    label(for='surface') Surface (M²)
-     input.form-control(type='number' name='surface'  min="1" max="999")
-    p
-    button(type="submit") Submit
+ if active
+  p #{message}
+  a(href='/display-enclosures')
+   button(type="button") Back
+ else
+  form(action='/update-enclosure/'+Id method='POST')
+    #border
+     br
+     #txtenclos
+      | Modifier
+     br
+     dir#infos
+      | Nom : 
+      input.form-control(type='text' name='name')
+      p
+      p
+      p
+      #txtdesc
+       | Description :
+       p
+       #txtareadesc
+        textarea(name='description' rows='6' cols='37')
+     p
+     p
+     dir#infos
+      | Surface (M²) : 
+      input.form-control(type='number' name='surface'  min="1" max="999")
+     dir#buttonajouter
+      button(type='submit' ) Valider
+     #buttonsuppr
+      a(href='/display-enclosures')
+       button(type='submit' )
+        #txtbutton
+         #txtsuppr
+          | Retourner aux enclos
  p #{message}

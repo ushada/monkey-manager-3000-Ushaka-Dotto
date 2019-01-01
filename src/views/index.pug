@@ -1,5 +1,15 @@
 extends layout.pug
 block content
-  h3 Welcome to Monkey Manager 3000.
-  a(href='/display-enclosures') Acces enclosures.
+  #txtaccueil
+  br
+  br
+  #txtaccueil2
+    | Le Monkey Manager 3000 est une application permetant de g&eacute;rer la reserve du parc Henri Vinay.
+  #imageacceuil
+  img(src='images/accueil.gif' height='300')
+  #buttonaccueil
+   a(href='/display-enclosures')
+    button(type='button')
+     #txtbutton
+      | Accéder aux enclos.
   p #{message}

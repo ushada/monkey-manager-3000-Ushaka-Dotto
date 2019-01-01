@@ -1,23 +1,51 @@
 extends layout.pug
 block content
+ if active
+   p Message : #{message}
+   a(href='/display-enclosures')
+    button(type="button") Retourner aux enclos
+ else
+  #border
    form(action='/update-monkey/'+Id method='POST')
-    label(for='name') Name
-     input.form-control(type='text' name='name')
-    p
-    label(for='species') Species
-     input.form-control(type='text' name='species')
-    p
-    label(for='height') Height (CM)
-     input.form-control(type='number' name='height' min='1' max='999')
-    p
-    label(for='weight') Weight (KG)
-     input.form-control(type='number' name='weight' min="1" max="999")
-    p
-    label(for='enclosure') Change enclosure :
+    br
+   dir#infos
+    | Nom : 
+    input.form-control(type='text' name='name')
+    br
+    br
+    br
+    br
+    |                 Taille (CM) : 
+    input.form-control(type='number' name='height' min='1' max='999')
+    br
+    br
+    br
+    br
+    |                 Poid (KG) : 
+    input.form-control(type='number' name='weight' min="1" max="999")
+    br
+    br
+    br
+    br
+    |                 Espèce : 
+    input.form-control(type='text' name='species')
+    br
+    br
+    br
+    br
+    #txtenclos Choisir un enclos :
+    #checkboxx
      each val in enclosures
       p
       input.form-control(type='radio' name='enclosure' value=val.id)
       span= val.name
-    p
-    button(type="submit") Submit
-    p #{message}
+   dir#buttonajouter
+    form(action='/form-monkey' method='POST')
+     button(type='submit' ) Valider
+   p
+   #buttonsuppr
+     a(href='/display-enclosures')
+      button(type='submit' )
+       #txtbutton
+        #txtsuppr
+          | Retourner aux enclos

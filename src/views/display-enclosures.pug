@@ -1,18 +1,21 @@
 extends layout.pug
 block content
- p Enclosures :
- ul
   each val in enclosures
-   a(href='/detail-enclosure/'+val.id)
-    li= val.name
+    #border
+     a(href='/detail-enclosure/'+val.id)
+      #txtenclos
+       |#{val.name}
     p
- if haveEnclosure
-  a(href='/form-monkey')
-   button(type="submit") Add new monkey
- else
-  p You need an enclosure to add a monkey.
- p
- a(href='/form-enclosure')
-  button(type="submit") Add new enclosure
- p #{message}
- p #{monkeys}
+  if haveEnclosure
+   a(href='/form-monkey')
+    button(type="submit") Add new monkey
+  else
+   p You need an enclosure to add a monkey.
+  p
+  a(href='/form-enclosure')
+   button(type="submit") Add new enclosure
+  p
+  a(href='/')
+   button(type="submit") Homepage
+  p #{message}
+  p #{monkeys}
